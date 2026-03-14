@@ -9,6 +9,7 @@ function Navbar() {
         <Link to="/" className="hover:text-yellow-400">Home</Link>
         <Link to="/about" className="hover:text-yellow-400">About</Link>
         <Link to="/contact" className="hover:text-yellow-400">Contact</Link>
+                <Link to="/contact" className="hover:text-yellow-400">Help</Link>
       </div>
     </nav>
   );
@@ -24,6 +25,10 @@ function About() {
 
 function Contact() {
   return <h1 className="text-3xl p-6">Contact Page</h1>;
+}
+
+function Contact() {
+  return <h1 className="text-3xl p-6">Help Page</h1>;
 }
 
 function App() {
