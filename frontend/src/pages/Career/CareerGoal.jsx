@@ -5,11 +5,17 @@ import { careerOptions } from "../../data/careerOptions";
 
 const CareerGoal = () => {
   const navigate = useNavigate();
-  const [selectedCareer, setSelectedCareer] = useState(null);
+  const [selectedCareer, setSelectedCareer] = useState(
+    localStorage.getItem("selectedCareer") || ""
+  );
 
   const handleContinue = () => {
-    if (!selectedCareer) return;
-    localStorage.setItem("Selected Career:", selectedCareer);
+    if (!selectedCareer) {
+      alert("Please select a career goal first.");
+      return;
+    }
+
+    localStorage.setItem("selectedCareer", selectedCareer);
     navigate("/dashboard");
   };
 

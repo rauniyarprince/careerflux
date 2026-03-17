@@ -20,8 +20,17 @@ const MainLayout = () => {
               Dashboard
             </Link>
             <Link to="/roadmap" className="block rounded-lg px-3 py-2 hover:bg-gray-100">
-  Roadmap
-</Link>
+              Roadmap
+            </Link>
+            <Link to="/quiz" className="block rounded-lg px-3 py-2 hover:bg-gray-100">
+              Quiz
+            </Link>
+            <Link to="/interview" className="block rounded-lg px-3 py-2 hover:bg-gray-100">
+              Mock Interview
+            </Link>
+            <Link to="/resume-builder" className="block rounded-lg px-3 py-2 hover:bg-gray-100">
+              Resume Builder
+            </Link>
           </nav>
         </aside>
 

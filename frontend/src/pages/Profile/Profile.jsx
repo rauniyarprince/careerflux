@@ -6,12 +6,17 @@ import Button from "../../components/common/Button";
 const Profile = () => {
   const navigate = useNavigate();
 
-  const [profileData, setProfileData] = useState({
-    fullName: "",
-    education: "",
-    college: "",
-    skills: "",
-    interests: "",
+  const [profileData, setProfileData] = useState(() => {
+    const saved = localStorage.getItem("profileData");
+    return saved
+      ? JSON.parse(saved)
+      : {
+          fullName: "",
+          education: "",
+          college: "",
+          skills: "",
+          interests: "",
+        };
   });
 
   const handleChange = (e) => {
@@ -23,7 +28,7 @@ const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("Profile Data:", JSON.stringify (profileData));
+    localStorage.setItem("profileData", JSON.stringify(profileData));
     navigate("/career-goal");
   };
 

@@ -2,6 +2,14 @@ const Dashboard = () => {
   const selectedCareer = localStorage.getItem("selectedCareer");
   const profileData = JSON.parse(localStorage.getItem("profileData"));
   const quizResult = JSON.parse(localStorage.getItem("quizResult"));
+  const interviewResult = JSON.parse(localStorage.getItem("interviewResult"));
+  const resumeData = JSON.parse(localStorage.getItem("resumeData"));
+
+  const isResumeReady =
+    resumeData?.fullName &&
+    resumeData?.email &&
+    resumeData?.skills &&
+    resumeData?.projects;
 
   return (
     <div>
@@ -21,20 +29,24 @@ const Dashboard = () => {
         </div>
 
         <div className="rounded-2xl bg-white p-5 shadow-sm">
-          <p className="text-sm text-gray-500">Roadmap Progress</p>
-          <h3 className="mt-2 text-lg font-semibold text-gray-800">35%</h3>
-        </div>
-
-        <div className="rounded-2xl bg-white p-5 shadow-sm">
           <p className="text-sm text-gray-500">Quiz Score</p>
           <h3 className="mt-2 text-lg font-semibold text-gray-800">
-            {quizResult?.scorePercentage ? `${quizResult.scorePercentage}%` : "Not attempted"}
+            {quizResult ? `${quizResult.scorePercentage}%` : "Not attempted"}
           </h3>
         </div>
 
         <div className="rounded-2xl bg-white p-5 shadow-sm">
           <p className="text-sm text-gray-500">Interview Readiness</p>
-          <h3 className="mt-2 text-lg font-semibold text-gray-800">Intermediate</h3>
+          <h3 className="mt-2 text-lg font-semibold text-gray-800">
+            {interviewResult ? interviewResult.level : "Not attempted"}
+          </h3>
+        </div>
+
+        <div className="rounded-2xl bg-white p-5 shadow-sm">
+          <p className="text-sm text-gray-500">Resume Status</p>
+          <h3 className="mt-2 text-lg font-semibold text-gray-800">
+            {isResumeReady ? "Ready" : "Incomplete"}
+          </h3>
         </div>
       </div>
     </div>
