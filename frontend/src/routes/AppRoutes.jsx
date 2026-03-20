@@ -12,6 +12,8 @@ import QuizResult from "../pages/Quiz/QuizResults";
 import Interview from "../pages/Interview/Interview";
 import InterviewFeedback from "../pages/Interview/InterviewFeedback";
 import ResumeBuilder from "../pages/Resume/ResumeBuilder";
+import ATSChecker from "../pages/Resume/ATSChecker";
+import Resources from "../pages/Roadmap/Resources";
 
 const AppRoutes = () => {
   return (
@@ -33,7 +35,10 @@ const AppRoutes = () => {
           <Route path = "/interview" element = {<Interview />} />
           <Route path = "/interview-feedback"  element ={<InterviewFeedback /> } />
           <Route path="/resume-builder" element={<ResumeBuilder />} />
+          <Route path = "/ats-checker" element ={<ATSChecker />}/>
         </Route>
+
+        < Route path="/resources" element = {<Resources />} />
       </Routes>
     </BrowserRouter>
   );

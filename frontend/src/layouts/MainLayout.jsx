@@ -31,6 +31,12 @@ const MainLayout = () => {
             <Link to="/resume-builder" className="block rounded-lg px-3 py-2 hover:bg-gray-100">
               Resume Builder
             </Link>
+            <Link to="/ats-checker" className="block rounded-lg px-3 py-2 hover:bg-gray-100">
+  ATS Checker
+</Link>
+<Link to="/resources" className="block rounded-lg px-3 py-2 hover:bg-gray-100">
+  Resources
+</Link>
           </nav>
         </aside>
 
